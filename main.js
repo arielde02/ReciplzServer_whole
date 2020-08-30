@@ -36,8 +36,10 @@ app.use(
         duration: 20 * 60 * 1000, // expired after 20 sec
         activeDuration: 0, // if expiresIn < activeDuration,
         //the session will be extended by activeDuration milliseconds
+        proxy : true,
         cookie: {
-            httpOnly: false
+            httpOnly: false,
+            secure: true
         }
 
     })

@@ -340,7 +340,7 @@ router.get("/my_last_watched", async(req, res, next) => {
     try {
 
         const user_ID = req.session.user_id
-
+        console.log('req.session.user_id', req.session.user_id);
         const my_recipes_ids =
             await DButils.execQuery(
                 `SELECT TOP 3 recipe_id FROM user_watched WHERE user_id = '${user_ID}' ORDER BY insert_time DESC`)
